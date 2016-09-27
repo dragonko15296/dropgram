@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  get 'drops/index'
+  root "drops#index"
+  resources :drops, except: [:show] do
+    collection do
+      post :confirm
+    end
+  end
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -43,3 +43,5 @@ group :development, :test do
   gem 'spring'
   gem 'rails_12factor', group: :production
 end
+
+gem 'twitter-bootstrap-rails'

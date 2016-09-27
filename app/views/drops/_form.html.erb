@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_for(@drop, url: choose_new_or_edit) do |f| %>
+  <% if @drop.errors.any? %>
+    <div id="error_explanation"> <!-- #バリデーションのエラー件数 -->
+      <ul>
+        <% @drop.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label "味" %>
+  <%= f.text_field :content, class: "form-control" %>
+  <br>
+  <%= f.submit "いれる", class:"btn btn-primary btn-block"%>
+<% end %>
