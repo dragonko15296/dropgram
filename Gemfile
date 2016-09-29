@@ -45,3 +45,5 @@ group :development, :test do
 end
 
 gem 'twitter-bootstrap-rails'
+gem 'devise'
+gem 'faker'

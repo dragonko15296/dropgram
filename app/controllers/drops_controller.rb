@@ -1,5 +1,6 @@
 class DropsController < ApplicationController
   before_action :set_drop, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @drops = Drop.all
@@ -15,6 +16,7 @@ class DropsController < ApplicationController
 
   def create
     @drop = Drop.new(drops_params)
+    @drop.user_id = current_user.id
     if @drop.save
       redirect_to drops_path, notice: "いれた！"
     else

@@ -12,37 +12,46 @@ header {
 .navbar-default {
     border: 0;
     padding: 5px 25px;
-    .navbar-brand {
-    color: #ccc;
-    &:hover {
-      color: white;
-    }
-  }
 }
 .navbar {
     background-color: transparent;
     color: white;
     margin-bottom: 0px;
 }
-
+.navbar-default {
+  .navbar-brand {
+    color: #ccc;
+    &:hover {
+      color: white;
+    }
+  }
+  .navbar-nav > li > a {
+    color: #ccc;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+  .navbar-nav > .open > a {
+    background-color: transparent;
+    color: white;
+    &:hover, &:focus {
+      background-color: transparent;
+      color: white;
+    }
+  }
+}
 @media (max-width: 767px) {
-.navbar-default .navbar-nav {
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #ccc;
     text-align: center;
     &:hover, &:focus {
       color: white;
     }
   }
-}
-  .navbar-default {
+  .navbar-default .navbar-toggle {
     background-color: transparent;
     &:hover, &:focus {
       background-color: transparent;
-    }
-    .navbar-header {
-      color: #ccc;
-      &:hover, &:focus {
-        color: white
     }
   }
 }
@@ -50,6 +59,11 @@ header {
 body {
   text-align: center;
   font-family:メイリオ
+}
+
+.flash {
+  color: white;
+  padding-top: 10px;
 }
 
 .row-content {
