@@ -19,6 +19,7 @@ class DropsController < ApplicationController
     @drop.user_id = current_user.id
     if @drop.save
       redirect_to drops_path, notice: "いれた！"
+      NoticeMailer.sendmail_drop(@drop).deliver
     else
       render action: "new"
     end
